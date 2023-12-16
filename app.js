@@ -28,71 +28,107 @@ const opt10 = document.querySelector("#opt10")
 const opt11 = document.querySelector("#opt11")
 const opt12 = document.querySelector("#opt12")
 const getFile = document.querySelector("#getFile")
-
-// const alloptions = document.querySelector(".options")
+const alloptions = document.querySelector(".options")
 const SubmitBtn = document.querySelector("#SubmitBtn");
 
   
-
-SubmitBtn.addEventListener("click", async () => {
+if(SubmitBtn){
+SubmitBtn.addEventListener("click", async() => {
   console.log("aaraha hai")
-  
-
- const docRef = await addDoc(collection(db, "User data"), {
+  if ( opt1.value == "" ) {
+      SubmitBtn.Disabled = true
+      alert("please fill all the fields")
+  }
+  else if(opt2.value == ""){
+    SubmitBtn.Disabled = true
+    alert("please fill all the fields")
+  }
+  else if(opt3.value == ""){
+    alert("please fill all the fields")
+  } else if(opt4.value == ""){
+    alert("please fill all the fields")
+  } else if(opt5.value == ""){
+    alert("please fill all the fields")
+  } else if(opt6.value == ""){
+    alert("please fill all the fields")
+  } else if(opt7.value == ""){
+    alert("please fill all the fields")
+  } else if(opt8.value == ""){
+    alert("please fill all the fields")
+  } else if(opt9.value == ""){
+    alert("please fill all the fields")
+  } else if(opt10.value == ""){
+    alert("please fill all the fields")
+  } else if(opt11.value == ""){
+    alert("please fill all the fields")
+  } else if(opt12.value == ""){
+    alert("please fill all the fields")
+  }
+  else if(getFile.value == ""){
+    alert("please add your profile picture")
     
-    City: opt1.value,
-    Course: opt2.value,
-    Name: opt3.value,
-    Father_Name : opt4.value,
-    Email: opt5.value,
-    Phone_Number : opt6.value,
-    Cnic : opt7.value,
-    Fathers_Cnic : opt8.value,
-    DOB : opt9.value,
-    Gender : opt10.value,
-    address : opt11.value,
-    qualification : opt12.value,
-    getFile :  getFile.value
-
-
-
-
-
-  });
-
+  }
+  else {
+    const docRef = await addDoc(collection(db, "User data"), {
+    
+      City: opt1.value,
+      Course: opt2.value,
+      Name: opt3.value,
+      Father_Name : opt4.value,
+      Email: opt5.value,
+      Phone_Number : opt6.value,
+      Cnic : opt7.value,
+      Fathers_Cnic : opt8.value,
+      DOB : opt9.value,
+      Gender : opt10.value,
+      address : opt11.value,
+      qualification : opt12.value,
+      getFile :  getFile.value,
+  
+  
+  
+  
+    });
+  
+  
+    SubmitBtn.Disabled = false
+  
+   
+  
+  
+    
+  
+    opt1.value = "";
+    opt2.value = "";
+    opt3.value = "";
+    opt4.value = "";
+    opt5.value = "";
+    opt6.value = "";
+    opt7.value = "";
+    opt8.value = "";
+    opt9.value = "";
+    opt10.value = "";
+    opt11.value = "";
+    opt12.value = "";
+    getFile.value = "";
+    
+  
+   
+      
+    console.log("Your Information is written in :" , docRef.id)
+  
+  
+  
+   alert("you are enrolled")
+  }
 
  
-
-
-  
-
-  opt1.value = "";
-  opt2.value = "";
-  opt3.value = "";
-  opt4.value = "";
-  opt5.value = "";
-  opt6.value = "";
-  opt7.value = "";
-  opt8.value = "";
-  opt9.value = "";
-  opt10.value = "";
-  opt11.value = "";
-  opt12.value = "";
-  getFile.value = "";
-  
-
- 
-    
-  console.log("Your Information is written in :" , docRef.id)
-
-
-
 
 
 }
 )
 
-
+}
 
 
 

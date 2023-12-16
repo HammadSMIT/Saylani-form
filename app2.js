@@ -19,7 +19,7 @@ const firebaseConfig = {
 
 
 // ========= Storage =========
-
+if(SubmitBtn){
   SubmitBtn.addEventListener("click" , () => {
   //   console.log(getFile.files[0].name)
   const mountainsRef = ref(storage, `images/${getFile.files[0].name}`);
@@ -64,3 +64,4 @@ const firebaseConfig = {
   //   });
   
 })
+}
