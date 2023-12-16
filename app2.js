@@ -20,7 +20,11 @@ const firebaseConfig = {
 
 // ========= Storage =========
 if(SubmitBtn){
+
   SubmitBtn.addEventListener("click" , () => {
+    if(getFile.value == ""){
+    alert("please add your Picture")
+    }
   //   console.log(getFile.files[0].name)
   const mountainsRef = ref(storage, `images/${getFile.files[0].name}`);
   const uploadTask = uploadBytesResumable(mountainsRef,getFile.files[0]);

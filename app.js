@@ -36,11 +36,9 @@ if(SubmitBtn){
 SubmitBtn.addEventListener("click", async() => {
   console.log("aaraha hai")
   if ( opt1.value == "" ) {
-      SubmitBtn.Disabled = true
       alert("please fill all the fields")
   }
   else if(opt2.value == ""){
-    SubmitBtn.Disabled = true
     alert("please fill all the fields")
   }
   else if(opt3.value == ""){
@@ -64,10 +62,10 @@ SubmitBtn.addEventListener("click", async() => {
   } else if(opt12.value == ""){
     alert("please fill all the fields")
   }
-  else if(getFile.value == ""){
-    alert("please add your profile picture")
+  // else if(getFile.value == ""){
+  //   alert("please add your profile picture")
     
-  }
+  // }
   else {
     const docRef = await addDoc(collection(db, "User data"), {
     
